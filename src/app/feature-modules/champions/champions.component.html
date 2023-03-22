@@ -1,0 +1,17 @@
+<div class="champions-container">
+  <div class="array-container">
+    <ng-container *ngFor="let item of championsArray">
+      <app-champion-basic [championInfo]="item"></app-champion-basic>
+      <!-- <div class="array-item-wrapper">
+        <div class="array-item-value">
+          {{item.id}}
+        </div>
+        <div class="array-item-image">
+          <img [src]="imageUrl(item.id)" [alt]="item.id">
+        </div>
+        <div class="array-item">
+          {{item.title}}
+        </div>
+      </div> -->
+    </ng-container>
+</div>
