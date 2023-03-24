@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 import { TopnavComponent } from './topnav/topnav.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { TabsComponent } from './tabs/tabs.component';
+import { TabComponent } from './tab/tab.component';
 
 
 
 @NgModule({
   declarations: [
     TopnavComponent,
-    FooterComponent
+    FooterComponent,
+    TabsComponent,
+    TabComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +21,9 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     TopnavComponent,
-    FooterComponent
+    FooterComponent,
+    TabsComponent,
+    TabComponent
   ]
 })
 export class CommonComponentsModule { }

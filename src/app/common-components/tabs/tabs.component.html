@@ -1,0 +1,13 @@
+<div class="tabs-container">
+  <div class="tabs-menu-container">
+    <ng-container *ngIf="tabs">
+      <div class="tab-item" *ngFor="let tab of tabs; let i = index" [ngClass]="{'active': tab.active === true }" (click)="selectTab(tab)">
+        <img *ngIf="i === 0" [src]="tab.getImageSourcePassive()" [alt]="tab.title">
+        <img *ngIf="i !== 0" [src]="tab.getImageSourceSpell()" [alt]="tab.title">
+      </div>
+    </ng-container>
+  </div>
+  <div class="tab-content">
+    <ng-content></ng-content>
+  </div>
+</div>

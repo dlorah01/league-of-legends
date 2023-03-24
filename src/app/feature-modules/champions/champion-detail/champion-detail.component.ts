@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { DdragonService } from '../../services/ddragon.service';
 import { ChampionDetail } from './models/champion-detail';
+import { Spell } from './models/spell';
 
 @Component({
   selector: 'app-champion-detail',
@@ -14,6 +15,7 @@ export class ChampionDetailComponent {
   championId!: string
   championBanner!: string
   championSquare!: string
+  championsSpells!: any[]
   version!: string
 
   constructor(private dDragonService: DdragonService, private route: ActivatedRoute) {
@@ -31,6 +33,7 @@ export class ChampionDetailComponent {
       this.championDetail = answer[this.championId] as ChampionDetail
       this.championBanner = this.getRandomBannerImage()
       this.championSquare = this.getChampionSquareImage()
+      this.championsSpells = this.getChampionSpells()
     })
   }
 
@@ -49,6 +52,13 @@ export class ChampionDetailComponent {
 
   getTagImage(tag: string): string {
     return `../../../../assets/images/${tag.toLowerCase()}_icon.png`
+  }
+
+  getChampionSpells(): any[] {
+    let answer : any[] = []
+    answer = this.championDetail.spells
+    answer.unshift(this.championDetail.passive)
+    return answer
   }
 
 }

@@ -24,6 +24,14 @@
 
   </div>
   <div class="content-container">
-    {{championDetail | json}}
+    <div class="abilities-container" *ngIf="championsSpells">
+      <app-tabs>
+        <app-tab *ngFor="let item of championsSpells" [title]="item.name" [imageSource]="item.image.full" [version]="this.version">
+          {{item.description}}
+          {{item | json}}
+        </app-tab>
+      </app-tabs>
+    </div>
+    <!-- {{championDetail | json}} -->
   </div>
 </div>

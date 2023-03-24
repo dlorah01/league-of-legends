@@ -4,6 +4,7 @@ import { ChampionsComponent } from './champions.component';
 import { ChampionsRoutingModule } from './champions-routing.module';
 import { ChampionBasicComponent } from './champion-basic/champion-basic.component';
 import { ChampionDetailComponent } from './champion-detail/champion-detail.component';
+import { CommonComponentsModule } from 'src/app/common-components/common-components.module';
 
 
 
@@ -15,7 +16,8 @@ import { ChampionDetailComponent } from './champion-detail/champion-detail.compo
   ],
   imports: [
     CommonModule,
-    ChampionsRoutingModule
+    ChampionsRoutingModule,
+    CommonComponentsModule
   ]
 })
 export class ChampionsModule { }
