@@ -1,0 +1,7 @@
+<div class="items-container">
+  <div class="array-container">
+    <ng-container *ngFor="let item of itemsArray">
+      <app-item-basic [itemInfo]="item" [version]="version"></app-item-basic>
+    </ng-container>
+  </div>
+</div>

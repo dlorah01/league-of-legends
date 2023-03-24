@@ -11,6 +11,7 @@ import { Champion } from './models/champion';
 export class ChampionsComponent {
   championsArray: Champion[] = []
   version!: string
+  classes: any = {}
 
   constructor(private dDragonService: DdragonService) {
     this.dDragonService.getDDragonDataVersion().pipe(
@@ -20,7 +21,11 @@ export class ChampionsComponent {
     })).subscribe((champions) => {
       for (const key in champions) {
         this.championsArray.push(champions[key])
+        champions[key].tags.forEach((x: string) => {
+          if (!this.classes[x]) this.classes[x] = true
+        })
       }
+      console.log('clases', this.classes)
     })
   }
 }

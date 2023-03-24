@@ -1,9 +1,9 @@
 export type Image = {
   full: string,
-  group: string,
-  h: number,
   sprite: string,
-  w: number,
+  group: string,
   x: number,
   y: number
+  w: number,
+  h: number,
 }
