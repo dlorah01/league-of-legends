@@ -1,0 +1,23 @@
+<div class="ability-container" *ngIf="ability">
+  <div class="ability-name">
+    {{ability.name}}
+  </div>
+  <div class="ability-key" [ngSwitch]="index">
+    <ng-template ngSwitchCase="1">Q Ability</ng-template>
+    <ng-template ngSwitchCase="2">W Ability</ng-template>
+    <ng-template ngSwitchCase="3">E Ability</ng-template>
+    <ng-template ngSwitchCase="4">R Ability</ng-template>
+    <ng-template ngSwitchDefault=""></ng-template>
+  </div>
+  <div class="ability-cooldown">
+    {{ability.cooldownBurn}}
+  </div>
+
+  <div class="ability-description">
+    {{trimTextDescription(ability.description)}}
+  </div>
+
+  <div class="ability-tooltip">
+    {{trimTextDescription(ability.tooltip)}}
+  </div>
+</div>

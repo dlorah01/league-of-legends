@@ -26,9 +26,13 @@
   <div class="content-container">
     <div class="abilities-container" *ngIf="championsSpells">
       <app-tabs>
-        <app-tab *ngFor="let item of championsSpells" [title]="item.name" [imageSource]="item.image.full" [version]="this.version">
-          {{item.description}}
-          {{item | json}}
+        <app-tab *ngFor="let item of championsSpells; let i = index" [title]="item.name" [imageSource]="item.image.full" [version]="this.version">
+          <ng-container *ngIf="i === 0">
+            <app-passive [passive]="item"></app-passive>
+          </ng-container>
+          <ng-container *ngIf="i !== 0">
+            <app-ability [ability]="item" [index]="i"></app-ability>
+          </ng-container>
         </app-tab>
       </app-tabs>
     </div>
