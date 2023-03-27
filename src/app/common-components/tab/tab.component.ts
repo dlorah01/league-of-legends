@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-tab',
@@ -11,7 +11,7 @@ export class TabComponent {
   @Input() imageSource!: string;
   @Input() active = false;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor() {}
 
   getImageSourceSpell(): string {
     return `https://ddragon.leagueoflegends.com/cdn/${this.version}/img/spell/${this.imageSource}`

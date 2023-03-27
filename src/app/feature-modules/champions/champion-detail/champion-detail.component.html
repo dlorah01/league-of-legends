@@ -1,41 +1,7 @@
 <div class="champion-detail-container">
-  <div class="banner-image-container" *ngIf="championBanner">
-    <img class="banner-image" [src]="championBanner" [alt]="championDetail.name" loading="lazy" />
-    <div class="banner-content-wrapper">
-      <img class="square-image" [src]="championSquare" [alt]="championDetail.name" loading="lazy" />
-
-      <div class="title-container">
-        <div class="champion-id">
-          {{championDetail.id}}
-        </div>
-        <div class="champion-title">
-          {{championDetail.title}}
-        </div>
-        <div class="champion-tags-container">
-          <div class="champion-tag" *ngFor="let tag of championDetail.tags">
-            <div class="image-tag-wrapper">
-              <img class="tag-image" [src]="getTagImage(tag)" [alt]="tag" loading="lazy" />
-            </div>
-            {{tag}}
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="content-container">
-    <div class="abilities-container" *ngIf="championsSpells">
-      <app-tabs>
-        <app-tab *ngFor="let item of championsSpells; let i = index" [title]="item.name" [imageSource]="item.image.full" [version]="this.version">
-          <ng-container *ngIf="i === 0">
-            <app-passive [passive]="item"></app-passive>
-          </ng-container>
-          <ng-container *ngIf="i !== 0">
-            <app-ability [ability]="item" [index]="i"></app-ability>
-          </ng-container>
-        </app-tab>
-      </app-tabs>
-    </div>
-    <!-- {{championDetail | json}} -->
-  </div>
+  <app-champion-header id="header" [champion]="championDetail" [version]="version"></app-champion-header>
+  <app-champion-abilities id="abilities" [champion]="championDetail" [version]="version"></app-champion-abilities>
+  <app-champion-lore id="lore" [champion]="championDetail" [enemies]="championEnemies" [version]="version"></app-champion-lore>
+  <app-champion-statistics id="abilities" [champion]="championDetail" [version]="version"></app-champion-statistics>
+  <app-champion-skins id="skins" [champion]="championDetail" [enemies]="championEnemies" [version]="version"></app-champion-skins>
 </div>

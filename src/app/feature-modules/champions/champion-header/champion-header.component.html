@@ -1,0 +1,23 @@
+<div class="champion-image-container" *ngIf="championBanner">
+  <img class="champion-image" [src]="championBanner" [alt]="champion.name" loading="lazy" />
+  <div class="champion-profile-image-content-wrapper">
+    <img class="champion-profile-image" [src]="championProfile" [alt]="champion.name" loading="lazy" />
+
+    <div class="champion-title-container">
+      <div class="champion-id">
+        {{champion.id}}
+      </div>
+      <div class="champion-title">
+        {{champion.title}}
+      </div>
+      <div class="champion-tags-container">
+        <div class="champion-tag" *ngFor="let tag of champion.tags">
+          <div class="image-tag-wrapper">
+            <img class="tag-image" [src]="getTagImage(tag)" [alt]="tag" loading="lazy" />
+          </div>
+          {{tag}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

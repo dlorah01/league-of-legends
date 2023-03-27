@@ -12,14 +12,15 @@ export class TabsComponent implements AfterContentInit {
 
   ngAfterContentInit() {
     const activeTabs = this.tabs.filter(tab => tab.active);
+    console.log('tabs', this.tabs)
     if (activeTabs.length === 0) {
       this.selectTab(this.tabs.first);
     }
   }
 
   selectTab(tab: TabComponent) {
-    this.tabs.toArray().forEach(tab => (tab.active = false));
     setTimeout(() => {
+      this.tabs.toArray().forEach(tab => (tab.active = false));
       tab.active = true;
     });
   }

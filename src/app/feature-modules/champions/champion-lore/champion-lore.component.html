@@ -1,0 +1,27 @@
+<div class="champion-lore-container" *ngIf="championBanner">
+  <img class="champion-lore-background-image" [src]="championBanner" [alt]="champion.name" loading="lazy" />
+  <div class="champion-lore-background-image-content-wrapper">
+    <div class="champion-title-container">
+      <div class="section-title">
+        Lore
+      </div>
+      <div class="section-subtitle" *ngIf="champion">
+        {{champion.id}}
+      </div>
+
+      <div class="champion-lore-description">
+        <div class="champion-lore">
+          {{champion.lore}}
+        </div>
+        <!-- <div class="champion-blurb">
+          {{champion.blurb}}
+        </div> -->
+      </div>
+      <div class="champion-related">
+        <img class="champion-profile-image image-secondary" [src]="championProfile2" alt="Yone" loading="lazy" />
+        <img class="champion-profile-image" [src]="championProfile" [alt]="champion.name" loading="lazy" />
+        <img class="champion-profile-image image-secondary" [src]="championProfile3" alt="Yasuo" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</div>

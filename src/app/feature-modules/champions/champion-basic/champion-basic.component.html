@@ -3,7 +3,7 @@
   <div class="info">
     <h1>{{championInfo.id}}</h1>
     <p>{{championInfo.title}}</p>
-    <button [routerLink]="[championInfo.id]">Details</button>
+    <button *ngIf="enemyChamps" [routerLink]="[championInfo.id, enemyChamps[0], enemyChamps[1]]">Details</button>
   </div>
 </div>
 

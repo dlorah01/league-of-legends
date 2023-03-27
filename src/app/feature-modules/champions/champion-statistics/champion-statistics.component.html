@@ -1,0 +1,26 @@
+<div class="champion-abilities-container">
+  <div class="section-title">
+    Statistics
+  </div>
+  <div class="section-subtitle" *ngIf="champion">
+    {{champion.id}}
+  </div>
+  <div class="statistics-container" *ngIf="championsStats">
+    <ng-container *ngFor="let item of championsStats">
+      <div class="champion-statistic">
+        <div class="champion-statistic-value">{{item[1]}}</div>
+        <div class="champion-statistic-title">{{item[0]}}</div>
+      </div>
+    </ng-container>
+    <!-- <app-tabs>
+      <app-tab *ngFor="let item of championsSpells; let i = index" [title]="item.name" [imageSource]="item.image.full" [version]="this.version">
+        <ng-container *ngIf="i === 0">
+          <app-passive [passive]="item"></app-passive>
+        </ng-container>
+        <ng-container *ngIf="i !== 0">
+          <app-ability [ability]="item" [index]="i"></app-ability>
+        </ng-container>
+      </app-tab>
+    </app-tabs> -->
+  </div>
+</div>

@@ -17,12 +17,13 @@ export class ChampionDetailComponent {
   championSquare!: string
   championsSpells!: any[]
   version!: string
+  championEnemies!: string[]
 
   constructor(private dDragonService: DdragonService, private route: ActivatedRoute) {
-    console.log('entro consutrcor', this.championDetail)
     this.route.params.pipe(
       switchMap((params: Params) => {
         this.championId = params['id']
+        this.championEnemies = [params['id2'], params['id3']]
         return this.dDragonService.getDDragonDataVersion()
       }),
       switchMap((versions: string[]) => {
@@ -31,34 +32,8 @@ export class ChampionDetailComponent {
       })
     ).subscribe((answer: any) => {
       this.championDetail = answer[this.championId] as ChampionDetail
-      this.championBanner = this.getRandomBannerImage()
-      this.championSquare = this.getChampionSquareImage()
-      this.championsSpells = this.getChampionSpells()
     })
   }
 
-  getRandomBannerImage(): string {
-    if(this.championDetail && this.championDetail.skins) {
-      const randomNumber = Math.floor(Math.random() * (this.championDetail.skins.length - 1))
-      let skinNumber = this.championDetail.skins[randomNumber].num || 0
-      return `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.championId}_${skinNumber}.jpg`
-    }
-    return `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${this.championId}_0.jpg`
-  }
-
-  getChampionSquareImage(): string {
-    return `https://ddragon.leagueoflegends.com/cdn/${this.version}/img/champion/${this.championId}.png`
-  }
-
-  getTagImage(tag: string): string {
-    return `../../../../assets/images/${tag.toLowerCase()}_icon.png`
-  }
-
-  getChampionSpells(): any[] {
-    let answer : any[] = []
-    answer = this.championDetail.spells
-    answer.unshift(this.championDetail.passive)
-    return answer
-  }
 
 }

@@ -7,6 +7,11 @@ import { ChampionDetailComponent } from './champion-detail/champion-detail.compo
 import { CommonComponentsModule } from 'src/app/common-components/common-components.module';
 import { AbilityComponent } from './ability/ability.component';
 import { PassiveComponent } from './passive/passive.component';
+import { ChampionAbilitiesComponent } from './champion-abilities/champion-abilities.component';
+import { ChampionLoreComponent } from './champion-lore/champion-lore.component';
+import { ChampionStatisticsComponent } from './champion-statistics/champion-statistics.component';
+import { ChampionSkinsComponent } from './champion-skins/champion-skins.component';
+import { ChampionHeaderComponent } from './champion-header/champion-header.component';
 
 
 
@@ -16,7 +21,12 @@ import { PassiveComponent } from './passive/passive.component';
     ChampionBasicComponent,
     ChampionDetailComponent,
     AbilityComponent,
-    PassiveComponent
+    PassiveComponent,
+    ChampionAbilitiesComponent,
+    ChampionLoreComponent,
+    ChampionStatisticsComponent,
+    ChampionSkinsComponent,
+    ChampionHeaderComponent
   ],
   imports: [
     CommonModule,

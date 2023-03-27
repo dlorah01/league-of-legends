@@ -1,0 +1,20 @@
+<div class="champion-skins-container" *ngIf="championBanner">
+  <img class="champion-skins-background-image" [src]="championBanner" [alt]="champion.name" loading="lazy" />
+  <div class="champion-skins-background-image-content-wrapper">
+    <div class="champion-title-container">
+      <div class="section-title">
+        Skins
+      </div>
+      <div class="section-subtitle" *ngIf="champion">
+        {{champion.id}}
+      </div>
+      <div class="champion-skins">
+        <ng-container *ngIf="championSkins">
+          <div class="champion-skin" *ngFor="let tab of championSkins; let i = index" [ngClass]="{'active': activeIndex === i }" (click)="changeActiveSkin(i)">
+            <img [src]="getSkinImage(i)" [alt]="champion.id">
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

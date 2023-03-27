@@ -9,9 +9,10 @@ const routes: Routes = [
     component: ChampionsComponent,
   },
   {
-    path: ':id',
+    path: ':id/:id2/:id3',
     component: ChampionDetailComponent
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

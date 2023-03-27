@@ -10,6 +10,7 @@ export class PassiveComponent {
   @Input() passive!: Passive
 
   trimTextDescription(): string {
+    console.log('passive', this.passive)
     return this.passive.description.replace(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g, '').replace('{{','').replace('}}', '')
   }
 }
