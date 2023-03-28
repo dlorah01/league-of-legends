@@ -1,7 +1,14 @@
 <div class="champions-container">
+  <div class="search-bar">
+    <input placeholder="Search champion" #input>
+    <button (click)="cleanField()" [ngClass]="{'disabled': isClean}">Clear</button>
+  </div>
   <div class="array-container">
-    <ng-container *ngFor="let champion of championsArray">
+    <ng-container *ngFor="let champion of searchArray">
       <app-champion-basic [championInfo]="champion" [championsNames]="championsNames"></app-champion-basic>
+    </ng-container>
+    <ng-container *ngIf="searchArray.length === 0">
+      <div class="no-results">No results found</div>
     </ng-container>
   </div>
 </div>
