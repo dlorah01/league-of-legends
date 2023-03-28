@@ -1,12 +1,12 @@
 <div class="topnav">
   <div class="topnav-wrapper">
-    <div class="logo">
-      LOL Visualizer
+    <div class="logo" (click)="goToMain()">
+      <img src="./../../../assets/images/logo.png" alt="logo">
     </div>
     <div class="menu">
-      <a class="menu-item" [routerLink]="['/main/home']" [routerLinkActive]="'active'">Home</a>
+      <!-- <a class="menu-item" [routerLink]="['/main/home']" [routerLinkActive]="'active'">Home</a> -->
       <a class="menu-item" [routerLink]="['/main/champions']" [routerLinkActive]="'active'">Champions</a>
-      <a class="menu-item" [routerLink]="['/main/items']" [routerLinkActive]="'active'">Items</a>
+      <!-- <a class="menu-item" [routerLink]="['/main/items']" [routerLinkActive]="'active'">Items</a> -->
     </div>
   </div>
 </div>
